@@ -31,17 +31,15 @@ async function jsonRequest(method, url, data, headers = []) {
 
         const responseData = await response.json();
         const returnResponse = {
-            success: true,
             data: responseData,
-            message: ""
+            error: ""
         }
         return returnResponse;
     } 
     catch (error) {
         const returnResponse = {
-            success: false,
             data: Object.create,
-            message: "jsonRequest Error: " + error
+            error: error
         }
         return returnResponse;
     }
